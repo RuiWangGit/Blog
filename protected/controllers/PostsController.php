@@ -154,6 +154,10 @@ class PostsController extends Controller
 	 */
 	public function actionIndex()
 	{
+		if ( !isset(Yii::app()->session['uid']) ){
+			return;
+		} 
+
 		$dataProvider=new CActiveDataProvider('Posts', array(
 
 			'criteria' =>array(

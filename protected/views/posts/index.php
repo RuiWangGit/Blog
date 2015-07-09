@@ -24,7 +24,7 @@
                             <div class="post-title">
                                 <h1><a href="/index.php?r=posts/view&id=<?=$record->id?>" > <?= $record->title ?></a></h1>
                             </div>
-
+                            
 
                             <div class="post-content">
                                 <?= $record->content ?>

@@ -120,7 +120,13 @@ class SiteController extends Controller
 				// echo Yii::app()->request->urlReferrer;
 				// die;
 				// $this->redirect(Yii::app()->user->returnUrl);
-				 
+				$record = Users::model()->findByAttributes(array('username'=>$_POST['LoginForm']['username'] ) );
+				// echo "ssss";
+				// var_dump($record);
+				// die;
+				Yii::app()->session['uid'] = $record['id'];
+				Yii::app()->session['username'] = $record['username'];
+
 				$this->redirect('/index.php?r=posts/index');
 			}
 				

@@ -40,8 +40,8 @@ class UserIdentity extends CUserIdentity
 
 		if ( $encrypted_password == $record['password'] ){
 			$this->errorCode=self::ERROR_NONE;
-			Yii::app()->session['uid'] = $record['id'];
-			Yii::app()->session['username'] = $record['username'];
+			// Yii::app()->session['uid'] = $record['id'];
+			// Yii::app()->session['username'] = $record['username'];
 		}
 		else {
 			$this->errorCode=self::ERROR_PASSWORD_INVALID ;

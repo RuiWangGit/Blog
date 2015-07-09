@@ -3519,3 +3519,105 @@ Stack trace:
 #30 {main}
 REQUEST_URI=/index.php?r=posts/index
 ---
+2015/07/09 21:18:45 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1. The SQL statement executed was: SELECT COUNT(*) FROM `tbl_posts` `t` WHERE author_id=.
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/views/posts/index.php (12)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/PostsController.php (169)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/09 21:18:45 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1. The SQL statement executed was: SELECT COUNT(*) FROM `tbl_posts` `t` WHERE author_id=' in /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/db/CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/db/ar/CActiveRecord.php(1606): CDbCommand->queryScalar()
+#2 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#3 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#4 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#5 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CDataProvider.php(168): CActiveDataProvider->fetchData()
+#6 /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/views/posts/index.php(12): CDataProvider->getData()
+#7 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CBaseController.php(126): require('/Users/ruiwang/...')
+#8 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/ruiwang/...', Array, true)
+#9 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(869): CBaseController->renderFile('/Users/ruiwang/...', Array, true)
+#10 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#11 /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/PostsController.php(169): CController->render('index', Array)
+#12 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/actions/CInlineAction.php(49): PostsController->actionIndex()
+#13 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#14 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#15 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#16 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#17 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#18 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#19 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(291): CFilterChain->run()
+#20 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(282): CController->run('')
+#22 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(141): CWebApplication->runController('posts')
+#23 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#24 /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php(15): CApplication->run()
+#25 {main}
+REQUEST_URI=/index.php?r=posts
+---
+2015/07/09 21:18:56 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1. The SQL statement executed was: SELECT COUNT(*) FROM `tbl_posts` `t` WHERE author_id=.
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/views/posts/index.php (12)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/PostsController.php (169)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/09 21:18:56 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1. The SQL statement executed was: SELECT COUNT(*) FROM `tbl_posts` `t` WHERE author_id=' in /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/db/CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/db/ar/CActiveRecord.php(1606): CDbCommand->queryScalar()
+#2 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#3 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#4 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#5 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CDataProvider.php(168): CActiveDataProvider->fetchData()
+#6 /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/views/posts/index.php(12): CDataProvider->getData()
+#7 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CBaseController.php(126): require('/Users/ruiwang/...')
+#8 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/ruiwang/...', Array, true)
+#9 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(869): CBaseController->renderFile('/Users/ruiwang/...', Array, true)
+#10 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#11 /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/PostsController.php(169): CController->render('index', Array)
+#12 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/actions/CInlineAction.php(49): PostsController->actionIndex()
+#13 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#14 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#15 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#16 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#17 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#18 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#19 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(291): CFilterChain->run()
+#20 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(282): CController->run('index')
+#22 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(141): CWebApplication->runController('posts/index')
+#23 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#24 /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php(15): CApplication->run()
+#25 {main}
+REQUEST_URI=/index.php?r=posts/index
+---
+2015/07/09 21:18:57 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1. The SQL statement executed was: SELECT COUNT(*) FROM `tbl_posts` `t` WHERE author_id=.
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/views/posts/index.php (12)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/PostsController.php (169)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/09 21:18:57 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1. The SQL statement executed was: SELECT COUNT(*) FROM `tbl_posts` `t` WHERE author_id=' in /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/db/CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/db/ar/CActiveRecord.php(1606): CDbCommand->queryScalar()
+#2 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#3 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#4 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#5 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CDataProvider.php(168): CActiveDataProvider->fetchData()
+#6 /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/views/posts/index.php(12): CDataProvider->getData()
+#7 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CBaseController.php(126): require('/Users/ruiwang/...')
+#8 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/ruiwang/...', Array, true)
+#9 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(869): CBaseController->renderFile('/Users/ruiwang/...', Array, true)
+#10 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#11 /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/PostsController.php(169): CController->render('index', Array)
+#12 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/actions/CInlineAction.php(49): PostsController->actionIndex()
+#13 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#14 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#15 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#16 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#17 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#18 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#19 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(291): CFilterChain->run()
+#20 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(282): CController->run('index')
+#22 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(141): CWebApplication->runController('posts/index')
+#23 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#24 /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php(15): CApplication->run()
+#25 {main}
+REQUEST_URI=/index.php?r=posts/index
+---
