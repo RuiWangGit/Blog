@@ -18,7 +18,7 @@ class UserIdentity extends CUserIdentity
 	public function authenticate()
 	{
 		// var_dump($this);
-		// die;
+		//die;
 		// $users=array(
 		// 	username => password
 		// 	'demo'=>'demo',
@@ -36,7 +36,7 @@ class UserIdentity extends CUserIdentity
 
 		$record = Users::model()->findByAttributes(array('username'=>$this->username));
 		$encrypted_password = md5($this->password.$record['salt']);
-		// var_dump( $record);
+		 // var_dump( $record);
 
 		if ( $encrypted_password == $record['password'] ){
 			$this->errorCode=self::ERROR_NONE;

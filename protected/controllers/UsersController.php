@@ -79,19 +79,32 @@ class UsersController extends Controller
 			$encrypted_password = md5($_POST['Users']['password']. $salt);
 			$_POST['Users']['password'] = $encrypted_password;
 			$_POST['Users']['salt']     = $salt;
-			$_POST['Users']['created_at'] = date('Y-m-d H:i:s');
-			$_POST['Users']['updated_at'] = date('Y-m-d H:i:s');
+			// $_POST['Users']['created_at'] = date('Y-m-d H:i:s');
+			// $_POST['Users']['updated_at'] = date('Y-m-d H:i:s');
 
 			// var_dump($_POST);
 
 			$model->attributes=$_POST['Users'];
 
-			// echo "after";
-			// var_dump($model);
+			if($model->save()){
+					// echo "ccccc";
+					// die;
+				if ( $model->login() ){
+					// echo "ddddd";
+					// die;
+					$record = Users::model()->findByAttributes(array('username'=>$_POST['Users']['username'] ) );
+				
+					Yii::app()->session['uid'] = $record['id'];
+					Yii::app()->session['username'] = $record['username'];
+					$this->redirect('/index.php?r=posts/index');
 
 
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				}
+				
+
+			}
+				
+				
 		}
 
 		$this->render('create',array(

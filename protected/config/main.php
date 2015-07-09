@@ -65,11 +65,11 @@ return array(
 			'errorAction'=>'site/error',
 		),
 
-		// 'session'=>array(
-  //           'class' => 'CDbHttpSession',
-  //           'connectionID' => 'db',
-  //           'sessionTableName' => 'dbsession',
-  //       ),
+		'session'=>array(
+            'class' => 'CDbHttpSession',
+            'connectionID' => 'db',
+            'sessionTableName' => 'dbsession',
+        ),
 
 		'log'=>array(
 			'class'=>'CLogRouter',

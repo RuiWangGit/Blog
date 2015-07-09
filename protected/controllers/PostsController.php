@@ -91,8 +91,8 @@ class PostsController extends Controller
 		{
 			
 			$_POST['Posts']['author_id'] = Yii::app()->session['uid'];
-			$_POST['Posts']['created_at'] = date('Y-m-d H:i:s');
-			$_POST['Posts']['updated_at'] = date('Y-m-d H:i:s');
+			// $_POST['Posts']['created_at'] = date('Y-m-d H:i:s');
+			// $_POST['Posts']['updated_at'] = date('Y-m-d H:i:s');
 			$model->attributes=$_POST['Posts'];
 
 
@@ -154,6 +154,8 @@ class PostsController extends Controller
 	 */
 	public function actionIndex()
 	{
+		// echo "RRR";
+		// die;
 		if ( !isset(Yii::app()->session['uid']) ){
 			return;
 		} 

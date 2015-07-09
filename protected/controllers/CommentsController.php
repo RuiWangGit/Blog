@@ -81,8 +81,8 @@ class CommentsController extends Controller
 
 		// 	var_dump($_POST);
 		// die;
-			$_POST['Comments']['created_at'] = date('Y-m-d H:i:s');
-			$_POST['Comments']['updated_at'] = date('Y-m-d H:i:s');
+			// $_POST['Comments']['created_at'] = date('Y-m-d H:i:s');
+			// $_POST['Comments']['updated_at'] = date('Y-m-d H:i:s');
 			
 			$model->attributes=$_POST['Comments'];
 			// var_dump($model);

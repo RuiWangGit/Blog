@@ -3621,3 +3621,132 @@ Stack trace:
 #25 {main}
 REQUEST_URI=/index.php?r=posts/index
 ---
+2015/07/09 22:42:43 [warning] [application] Failed to set unsafe attribute "password_cfn" of "Users".
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (87)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/09 22:44:37 [warning] [application] Failed to set unsafe attribute "password_cfn" of "Users".
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (87)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/09 22:45:29 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blog.dbsession' doesn't exist. The SQL statement executed was: DELETE FROM `dbsession` WHERE expire<:expire.
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/09 22:46:54 [warning] [application] Failed to set unsafe attribute "password_cfn" of "Users".
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (87)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/09 22:50:00 [warning] [application] Failed to set unsafe attribute "password_cfn" of "Users".
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (87)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/09 23:06:14 [warning] [application] Failed to set unsafe attribute "password_cfn" of "Users".
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (87)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/09 23:06:31 [warning] [application] Failed to set unsafe attribute "password_cfn" of "Users".
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (87)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/09 23:07:04 [warning] [application] Failed to set unsafe attribute "password_cfn" of "Users".
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (87)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/09 23:07:25 [warning] [application] Failed to set unsafe attribute "password_cfn" of "Users".
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (87)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/09 23:08:05 [warning] [application] Failed to set unsafe attribute "password_cfn" of "Users".
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (87)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/09 23:09:12 [warning] [application] Failed to set unsafe attribute "password_cfn" of "Users".
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (87)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/09 23:09:37 [warning] [application] Failed to set unsafe attribute "password_cfn" of "Users".
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (87)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/09 23:10:24 [warning] [application] Failed to set unsafe attribute "password_cfn" of "Users".
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (87)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/09 23:11:05 [warning] [application] Failed to set unsafe attribute "password_cfn" of "Users".
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (87)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/09 23:11:08 [warning] [application] Failed to set unsafe attribute "password_cfn" of "Users".
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (87)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/09 23:11:26 [warning] [application] Failed to set unsafe attribute "password_cfn" of "Users".
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (87)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/09 23:13:08 [warning] [application] Failed to set unsafe attribute "password_cfn" of "Users".
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (87)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/09 23:16:06 [warning] [application] Failed to set unsafe attribute "password_cfn" of "Users".
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (87)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/09 23:16:32 [warning] [application] Failed to set unsafe attribute "password_cfn" of "Users".
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (87)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/09 23:17:13 [warning] [application] Failed to set unsafe attribute "password_cfn" of "Users".
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (87)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/09 23:17:45 [warning] [application] Failed to set unsafe attribute "password_cfn" of "Users".
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (87)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/09 23:20:18 [warning] [application] Failed to set unsafe attribute "password_cfn" of "Users".
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (87)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/09 23:21:42 [warning] [application] Failed to set unsafe attribute "password_cfn" of "Users".
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (87)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/09 23:21:42 [error] [php] session_regenerate_id(): Cannot regenerate session id - headers already sent (/Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CHttpSession.php:182)
+Stack trace:
+#0 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/auth/CWebUser.php(715): CDbHttpSession->regenerateID()
+#1 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/auth/CWebUser.php(233): CWebUser->changeIdentity()
+#2 /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/models/Users.php(181): CWebUser->login()
+#3 /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php(92): Users->login()
+#4 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/actions/CInlineAction.php(49): UsersController->actionCreate()
+#5 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(308): CInlineAction->runWithParams()
+#6 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(133): UsersController->runAction()
+#7 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#9 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CInlineFilter.php(58): UsersController->filterAccessControl()
+#10 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#11 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(291): CFilterChain->run()
+#12 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(265): UsersController->runActionWithFilters()
+#13 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(282): UsersController->run()
+#14 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#15 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?r=users/create
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/models/Users.php (181)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (92)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/09 23:22:53 [warning] [application] Failed to set unsafe attribute "password_cfn" of "Users".
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (87)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/09 23:23:12 [warning] [application] Failed to set unsafe attribute "password_cfn" of "Users".
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (87)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/09 23:23:12 [error] [php] session_regenerate_id(): Cannot regenerate session id - headers already sent (/Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CHttpSession.php:182)
+Stack trace:
+#0 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/auth/CWebUser.php(715): CDbHttpSession->regenerateID()
+#1 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/auth/CWebUser.php(233): CWebUser->changeIdentity()
+#2 /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/models/Users.php(182): CWebUser->login()
+#3 /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php(92): Users->login()
+#4 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/actions/CInlineAction.php(49): UsersController->actionCreate()
+#5 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(308): CInlineAction->runWithParams()
+#6 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(133): UsersController->runAction()
+#7 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#9 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CInlineFilter.php(58): UsersController->filterAccessControl()
+#10 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#11 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(291): CFilterChain->run()
+#12 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(265): UsersController->runActionWithFilters()
+#13 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(282): UsersController->run()
+#14 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#15 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?r=users/create
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/models/Users.php (182)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (92)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/09 23:24:43 [warning] [application] Failed to set unsafe attribute "password_cfn" of "Users".
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (87)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/09 23:25:12 [warning] [application] Failed to set unsafe attribute "password_cfn" of "Users".
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (87)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/09 23:28:12 [warning] [application] Failed to set unsafe attribute "password_cfn" of "Users".
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (87)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)

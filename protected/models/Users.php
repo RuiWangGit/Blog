@@ -133,7 +133,59 @@ class Users extends CActiveRecord
 		return md5($salt.$password);
 	}
 
+	public function beforeSave() {
+	    if ($this->isNewRecord)
+	        $this->created_at = new CDbExpression('NOW()');
+	    else
+	        $this->updated_at = new CDbExpression('NOW()');
+	 
+	    return parent::beforeSave();
+	}
 
+
+	private $_identity;
+	/**
+	 * Authenticates the password.
+	 * This is the 'authenticate' validator as declared in rules().
+	 */
+	public function authenticate($attribute,$params)
+	{
+		if(!$this->hasErrors())
+		{
+			$this->_identity=new UserIdentity($this->username,$this->password);
+			if(!$this->_identity->authenticate())
+				$this->addError('password','Incorrect username or password.');
+		}
+	}
+
+	/**
+	 * Logs in the user using the given username and password in the model.
+	 * @return boolean whether login is successful
+	 */
+	public function login()
+	{
+		// echo "test11";
+		if($this->_identity===null)
+		{
+			// echo "1";
+			$this->_identity=new UserIdentity($this->username,$this->password);
+			$this->_identity->authenticate();
+			// echo $this->_identity->errorCode;
+		}
+
+		if($this->_identity->errorCode==2)
+		{
+			// echo "33";
+			// die;
+
+			// $duration=$this->rememberMe ? 3600*24*30 : 0; // 30 days
+			Yii::app()->user->login($this->_identity, 0);
+			
+			return true;
+		}
+		else
+			return false;
+	}
 
 
 
