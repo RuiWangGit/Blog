@@ -21,7 +21,7 @@ class Comments extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return '{{Comments}}';
+		return '{{comments}}';
 	}
 
 	/**
