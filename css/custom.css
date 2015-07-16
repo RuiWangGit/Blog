@@ -138,3 +138,9 @@ footer .footer-below{
 	padding: 0;
 }
 
+#hidden-typing-notice {
+	
+	margin: 10px;
+	color: red;
+}
+

@@ -8,9 +8,10 @@
 
 	//socket setup
 	//type: ( 0:chat_request, 1:chat )
-	var TYPING_TIMER_LENGTH = 1000; // ms
+	var TYPING_TIMER_LENGTH = 500; // ms
 
 	var connected = false;
+	var socketConnected = false;
 	var typing = false;
 	var lastTypingTime;
 
@@ -21,8 +22,9 @@
 	else {
 		var socket = io.connect('http://10.0.0.228:3001');
 		connected = true;
+		socketConnected = true;
 		//var socket = io.connect('http://localhost:3001');
-		console.log('test socket false');
+		//console.log('test socket false');
 		
 	}	
 		
@@ -30,7 +32,7 @@
 	var receID = "<?php echo $receiver['id'] ?>";             //hasn't used
 	// var unixTime = (new Date).getTime();
     //send chat request to server 	
-    socket.emit('chat_request', {type:0, sender: userID , receiver: receID, message:"", time: (new Date).getTime() }  );
+    if ( socketConnected ) socket.emit('chat_request', {type:0, sender: userID , receiver: receID, message:"", time: (new Date).getTime() }  );
 
     //------
     //open its own socket for myself.
@@ -50,12 +52,14 @@
     	}
     	else if (  data['type'] != undefined && data['type'] == 2 ) {
 
-    		$("input#inputMessage").attr("placeholder", data['message']);
+    		//$("input#inputMessage").attr("placeholder", data['message']);
+    		$('div#hidden-typing-notice').text(data['message']);
 
     	}
     	else if (  data['type'] != undefined && data['type'] == 3 ) {
 
-    		$("input#inputMessage").attr("placeholder", "");
+    		//$("input#inputMessage").attr("placeholder", "");
+    		$('div#hidden-typing-notice').text("");
 
     	}
 
@@ -82,11 +86,10 @@
 
 		});
 
-		// $('input#inputMessage').on('click', function (e) {
-		// 	$('input#inputMessage').focus();
-  //   		// alert('uid: '+uid);	
-
-		// });
+		$('input#inputMessage').on('click', function (e) {
+			//$('input#inputMessage').focus();
+    		updateTyping();
+		});
 
 
 	});
@@ -114,36 +117,75 @@
 
     	//send via socket
     	//socket.emit('chat_message', dataToSend);
-    	socket.emit(formData[1]['value'], dataToSend);
+    	if ( socketConnected ) socket.emit(formData[1]['value'], dataToSend);
     	//to stop typing
-    	socket.emit(userID, {type: 3, sender:userID, receiver:receID, message: "stop typing", time: ""} );
+    	if ( socketConnected ) socket.emit(userID, {type: 3, sender:userID, receiver:receID, message: "stop typing", time: ""} );
     	typing = false;
     	//
     }
 
 
 
-    var start;
+    
+    //active and inactive feature to save resouces on our node server, so it can be more scale
+	var IDLE_TIMEOUT = 30; //seconds
+	var _idleSecondsCounter = 0;
+	document.onclick = function() {
+	    _idleSecondsCounter = 0;
+	};
+	document.onmousemove = function() {
+	    _idleSecondsCounter = 0;
+	};
+	document.onkeypress = function() {
+	    _idleSecondsCounter = 0;
+	};
+	window.setInterval(CheckIdleTime, 1000);
 
-    $(document).ready(function() {
-    	start = Date.getTime();
+	function CheckIdleTime() {
+	    _idleSecondsCounter++;
 
-    	$(window).unload(function() {
-    		end = Date.getTime();
-    		$.ajax({ 
-    			url: "log.php",
-    			data: {'timeSpent': end - start}
-    		})
-    	});
-    }
+	    //handle overflow
+	    if ( _idleSecondsCounter == Number.MAX_VALUE) _idleSecondsCounter = IDLE_TIMEOUT + 1;
+
+	    var oPanel = document.getElementById("SecondsUntilExpire");
+	    if (oPanel){
+	    	oPanel.innerHTML = (IDLE_TIMEOUT - _idleSecondsCounter) + "";
+	    }
+	        
+	    if (_idleSecondsCounter >= IDLE_TIMEOUT) {
+	        // alert("Time expired!");
+	        // document.location.href = "logout.html";
+	        //socket = "";
+
+	        if ( socketConnected ){
+	        	// socket.disconnect();
+	         //    console.log(socket);
+
+	         socket.io.disconnect();
+	            socketConnected = false;
+	        }
+	        
+	    }
+	    else{
+	    	
+	    	if ( !socketConnected ) {
+	    		console.log(socket.io);
+	    		socket.io.reconnect();
+	    		socketConnected = true;
+	    		if ( socketConnected ) socket.emit('chat_request', {type:0, sender: userID , receiver: receID, message:"", time: (new Date).getTime() }  );
+
+	    		//socket.socket.reconnect();
+	    		
+
+	    	}
+	    	
+	    }
+	}
 
 
 
 
     //-----------------------------
-
-
-
     // Keyboard events
     // $(document).keydown(function(e) {
     //     //console.log(e);
@@ -154,8 +196,8 @@
     //     }
     // })
 
- //    $window.keydown(function (event) {
- //    // Auto-focus the current input when a key is typed
+    //    $window.keydown(function (event) {
+    //    // Auto-focus the current input when a key is typed
 	//     if (!(event.ctrlKey || event.metaKey || event.altKey)) {
 	//     	$currentInput.focus();
 	//     }
@@ -178,7 +220,7 @@
 	 		if (!typing) {
 	 			typing = true;
 	 			//socket.emit('typing');	 			
-	 			socket.emit(userID, {type: 2, sender:userID, receiver:receID, message: userID+" is typing...", time: ""} );
+	 			if ( socketConnected ) socket.emit(userID, {type: 2, sender:userID, receiver:receID, message: userID+" is typing...", time: ""} );
 	 		}
 	 		lastTypingTime = (new Date()).getTime();
 
@@ -187,7 +229,7 @@
 	 			var timeDiff = typingTimer - lastTypingTime;
 	 			if (timeDiff >= TYPING_TIMER_LENGTH && typing) {
 	 				//socket.emit('stop typing');
-	 				socket.emit(userID, {type: 3, sender:userID, receiver:receID, message: "stop typing", time: ""} );
+	 				if ( socketConnected ) socket.emit(userID, {type: 3, sender:userID, receiver:receID, message: "stop typing", time: ""} );
 	 				typing = false;
 	 			}
 	 		}, TYPING_TIMER_LENGTH);
@@ -205,11 +247,15 @@
 	<div class="row-fluid">
 		<div class=" col-md-8 col-xs-8" >
 
+
+			<p id="SecondsUntilExpire" style="background:yellow;"></P>
 			<div id="message-display">
 
 				<div class="message">
 					<p class="question"> Question </P>
 				</div>
+
+				
 
 			</div>
 
@@ -218,18 +264,23 @@
 					<p class="sender">   </p>
 					<p class="time">  </p>
 					<p class="content">  </p>
-
 			</div>
 
 
 
+
+			<div id="hidden-typing-notice"></div>
 		
 		</div>
+
+
+		
 	</div>
 
 
+		
 
-	<form id="chat-form" action="POST">
+		<form id="chat-form" action="POST">
 		
 		 <div class="form-group" >	    	
 		    
