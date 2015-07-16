@@ -119,6 +119,7 @@ footer .footer-below{
 	margin-bottom: 30px;
 }
 
+/*add for chat functionality*/
 .message {
 	color:white;
 	width: auto;
@@ -128,7 +129,7 @@ footer .footer-below{
 	margin: 5px;
 }
 
-.hidden-message, .hidden-send-message, .hidden-return-message {
+.hidden-message {
 	display: none;
 }
 .message p{
