@@ -119,3 +119,21 @@ footer .footer-below{
 	margin-bottom: 30px;
 }
 
+.message {
+	color:white;
+	width: auto;
+	height:80px;
+	background-color: rgb(97, 95, 139);
+	padding: 5px;
+	margin: 5px;
+}
+
+.hidden-message, .hidden-send-message, .hidden-return-message {
+	display: none;
+}
+.message p{
+	height:20px;
+	margin:1px;
+	padding: 0;
+}
+

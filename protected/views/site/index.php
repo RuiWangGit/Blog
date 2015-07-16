@@ -1,4 +1,4 @@
-<?php echo phpinfo()?>
+<?php //echo phpinfo()?>
 
 <div class="container">
 

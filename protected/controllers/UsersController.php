@@ -54,8 +54,24 @@ class UsersController extends Controller
 	 */
 	public function actionView()
 	{
-		$this->render('view',array(
-			'model'=>$this->loadModel(),
+		// echo "here?";
+		// die;
+		// var_dump($_GET['id']);
+		// die;
+
+
+		
+		// $dataProvider=new CActiveDataProvider('Users', array(
+
+		// 	'criteria' =>array(
+		// 		'condition' => "post_id=".$this->loadModel()->id,
+		// 	),
+		// ));
+		$receiver = Users::model()->findbyPk($_GET['id']);
+		// var_dump($receiver);
+		// die;
+		$this->render('view', array(
+		 	'receiver'=> $receiver
 		));
 	}
 
@@ -160,6 +176,8 @@ class UsersController extends Controller
 	public function actionIndex()
 	{
 		$dataProvider=new CActiveDataProvider('Users');
+		// var_dump($dataProvider);
+		// die;
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));

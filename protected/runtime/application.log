@@ -3750,3 +3750,404 @@ in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
 2015/07/09 23:28:12 [warning] [application] Failed to set unsafe attribute "password_cfn" of "Users".
 in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (87)
 in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/15 18:46:30 [error] [php] Use of undefined constant users - assumed 'users' (/Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/views/users/index.php:14)
+Stack trace:
+#0 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(869): UsersController->renderFile()
+#1 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(782): UsersController->renderPartial()
+#2 /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php(165): UsersController->render()
+#3 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/actions/CInlineAction.php(49): UsersController->actionIndex()
+#4 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(133): UsersController->runAction()
+#6 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CInlineFilter.php(58): UsersController->filterAccessControl()
+#9 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(265): UsersController->runActionWithFilters()
+#12 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(282): UsersController->run()
+#13 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?r=users/index
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/views/users/index.php (14)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (165)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/15 19:01:29 [error] [php] Use of undefined constant id - assumed 'id' (/Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/views/users/index.php:21)
+Stack trace:
+#0 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(869): UsersController->renderFile()
+#1 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(782): UsersController->renderPartial()
+#2 /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php(167): UsersController->render()
+#3 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/actions/CInlineAction.php(49): UsersController->actionIndex()
+#4 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(133): UsersController->runAction()
+#6 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CInlineFilter.php(58): UsersController->filterAccessControl()
+#9 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(265): UsersController->runActionWithFilters()
+#12 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(282): UsersController->run()
+#13 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?r=users/index
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/views/users/index.php (21)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (167)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/15 19:14:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php:196
+Stack trace:
+#0 /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php(58): UsersController->loadModel()
+#1 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/actions/CInlineAction.php(49): UsersController->actionView()
+#2 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(291): CFilterChain->run()
+#9 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(282): CController->run('view')
+#11 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(141): CWebApplication->runController('users/view')
+#12 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=users/view
+HTTP_REFERER=http://localhost:8888/index.php?r=users/index
+---
+2015/07/15 19:15:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php:196
+Stack trace:
+#0 /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php(58): UsersController->loadModel()
+#1 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/actions/CInlineAction.php(49): UsersController->actionView()
+#2 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(291): CFilterChain->run()
+#9 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(282): CController->run('view')
+#11 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(141): CWebApplication->runController('users/view')
+#12 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=users/view
+HTTP_REFERER=http://localhost:8888/index.php?r=users/index
+---
+2015/07/15 19:17:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php:198
+Stack trace:
+#0 /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php(60): UsersController->loadModel()
+#1 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/actions/CInlineAction.php(49): UsersController->actionView()
+#2 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(291): CFilterChain->run()
+#9 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(282): CController->run('view')
+#11 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(141): CWebApplication->runController('users/view')
+#12 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=users/view
+HTTP_REFERER=http://localhost:8888/index.php?r=users/index
+---
+2015/07/15 19:17:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php:198
+Stack trace:
+#0 /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php(60): UsersController->loadModel()
+#1 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/actions/CInlineAction.php(49): UsersController->actionView()
+#2 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(291): CFilterChain->run()
+#9 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(282): CController->run('view')
+#11 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(141): CWebApplication->runController('users/view')
+#12 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=users/view
+HTTP_REFERER=http://localhost:8888/index.php?r=users/index
+---
+2015/07/15 19:17:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php:198
+Stack trace:
+#0 /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php(60): UsersController->loadModel()
+#1 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/actions/CInlineAction.php(49): UsersController->actionView()
+#2 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(291): CFilterChain->run()
+#9 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(282): CController->run('view')
+#11 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(141): CWebApplication->runController('users/view')
+#12 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=users/view
+HTTP_REFERER=http://localhost:8888/index.php?r=users/index
+---
+2015/07/15 19:19:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php:198
+Stack trace:
+#0 /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php(60): UsersController->loadModel()
+#1 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/actions/CInlineAction.php(49): UsersController->actionView()
+#2 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(291): CFilterChain->run()
+#9 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(282): CController->run('view')
+#11 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(141): CWebApplication->runController('users/view')
+#12 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=users/view
+HTTP_REFERER=http://localhost:8888/index.php?r=users/index
+---
+2015/07/15 19:20:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php:198
+Stack trace:
+#0 /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php(60): UsersController->loadModel()
+#1 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/actions/CInlineAction.php(49): UsersController->actionView()
+#2 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(291): CFilterChain->run()
+#9 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(282): CController->run('view')
+#11 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(141): CWebApplication->runController('users/view')
+#12 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=users/view
+HTTP_REFERER=http://localhost:8888/index.php?r=users/index
+---
+2015/07/15 19:21:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php:198
+Stack trace:
+#0 /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php(60): UsersController->loadModel()
+#1 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/actions/CInlineAction.php(49): UsersController->actionView()
+#2 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(291): CFilterChain->run()
+#9 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(282): CController->run('view')
+#11 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(141): CWebApplication->runController('users/view')
+#12 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=users/view
+HTTP_REFERER=http://localhost:8888/index.php?r=users/index
+---
+2015/07/15 19:23:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php:201
+Stack trace:
+#0 /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php(61): UsersController->loadModel()
+#1 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/actions/CInlineAction.php(49): UsersController->actionView()
+#2 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(291): CFilterChain->run()
+#9 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(282): CController->run('view')
+#11 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(141): CWebApplication->runController('users/view')
+#12 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=users/view
+HTTP_REFERER=http://localhost:8888/index.php?r=users/index
+---
+2015/07/15 20:39:32 [error] [php] Undefined variable: user_id (/Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/views/users/view.php:20)
+Stack trace:
+#0 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(869): UsersController->renderFile()
+#1 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(782): UsersController->renderPartial()
+#2 /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php(60): UsersController->render()
+#3 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/actions/CInlineAction.php(49): UsersController->actionView()
+#4 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(133): UsersController->runAction()
+#6 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CInlineFilter.php(58): UsersController->filterAccessControl()
+#9 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(265): UsersController->runActionWithFilters()
+#12 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(282): UsersController->run()
+#13 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?r=users/view
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/views/users/view.php (20)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (60)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)
+2015/07/15 21:01:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php:201
+Stack trace:
+#0 /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php(63): UsersController->loadModel()
+#1 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/actions/CInlineAction.php(49): UsersController->actionView()
+#2 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(291): CFilterChain->run()
+#9 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(282): CController->run('view')
+#11 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(141): CWebApplication->runController('users/view')
+#12 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=users/view
+HTTP_REFERER=http://localhost:8888/index.php?r=users/index
+---
+2015/07/15 21:01:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php:201
+Stack trace:
+#0 /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php(63): UsersController->loadModel()
+#1 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/actions/CInlineAction.php(49): UsersController->actionView()
+#2 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(291): CFilterChain->run()
+#9 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(282): CController->run('view')
+#11 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(141): CWebApplication->runController('users/view')
+#12 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=users/view
+HTTP_REFERER=http://localhost:8888/index.php?r=users/index
+---
+2015/07/15 21:08:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php:209
+Stack trace:
+#0 /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php(71): UsersController->loadModel()
+#1 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/actions/CInlineAction.php(49): UsersController->actionView()
+#2 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(291): CFilterChain->run()
+#9 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(282): CController->run('view')
+#11 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(141): CWebApplication->runController('users/view')
+#12 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=users/view
+HTTP_REFERER=http://localhost:8888/index.php?r=users/index
+---
+2015/07/15 21:08:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php:209
+Stack trace:
+#0 /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php(71): UsersController->loadModel()
+#1 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/actions/CInlineAction.php(49): UsersController->actionView()
+#2 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(291): CFilterChain->run()
+#9 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(282): CController->run('view')
+#11 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(141): CWebApplication->runController('users/view')
+#12 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=users/view
+---
+2015/07/15 21:08:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php:209
+Stack trace:
+#0 /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php(71): UsersController->loadModel()
+#1 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/actions/CInlineAction.php(49): UsersController->actionView()
+#2 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(291): CFilterChain->run()
+#9 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(282): CController->run('view')
+#11 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(141): CWebApplication->runController('users/view')
+#12 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=users/view
+HTTP_REFERER=http://localhost:8888/index.php?r=users/index
+---
+2015/07/15 21:09:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php:210
+Stack trace:
+#0 /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php(59): UsersController->loadModel()
+#1 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/actions/CInlineAction.php(49): UsersController->actionView()
+#2 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(291): CFilterChain->run()
+#9 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(282): CController->run('view')
+#11 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(141): CWebApplication->runController('users/view')
+#12 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=users/view
+HTTP_REFERER=http://localhost:8888/index.php?r=users/index
+---
+2015/07/15 21:21:31 [error] [exception.CException] exception 'CException' with message 'Property "UsersController.uri" is not defined.' in /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/base/CComponent.php:130
+Stack trace:
+#0 /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php(59): CComponent->__get('uri')
+#1 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/actions/CInlineAction.php(49): UsersController->actionView()
+#2 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(291): CFilterChain->run()
+#9 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(282): CController->run('view')
+#11 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(141): CWebApplication->runController('users/view/10')
+#12 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=users/view/10
+HTTP_REFERER=http://localhost:8888/index.php?r=users/index
+---
+2015/07/15 21:24:19 [error] [php] Use of undefined constant id - assumed 'id' (/Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php:59)
+Stack trace:
+#0 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(133): UsersController->runAction()
+#1 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CInlineFilter.php(58): UsersController->filterAccessControl()
+#4 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(291): CFilterChain->run()
+#6 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CController.php(265): UsersController->runActionWithFilters()
+#7 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(282): UsersController->run()
+#8 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Users/ruiwang/Desktop/CodingDojo/Test/yii-1.1.16/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?r=users/view&id=10
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/protected/controllers/UsersController.php (59)
+in /Users/ruiwang/Desktop/CodingDojo/Test/blog/index.php (15)

@@ -11,7 +11,31 @@ $this->menu=array(
 
 <h1>Users</h1>
 
-<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-)); ?>
+<?php 
+	
+
+	foreach($dataProvider->getData() as $userData){
+		
+		//users can not talk to themself
+		//session always stores user id
+		if ( $userData['id'] != Yii::app()->session['uid'] ){
+
+
+		?>
+
+			<div class="private-question" >
+				<p>Question: <a href ="/index.php?r=users/view&id=<?= $userData['id'] ?>"><?= $userData['username'] ?></a></p>
+			</div>
+
+<?php
+		}
+	}
+
+?>
+
+<?php 
+	// $this->widget('zii.widgets.CListView', array(
+	// 	'dataProvider'=>$dataProvider,
+	// 	'itemView'=>'_view',
+	// ));
+ ?>

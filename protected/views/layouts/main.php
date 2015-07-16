@@ -32,8 +32,11 @@
 	  <div class="container-fluid">
 	    <!-- <div class="navbar-header"> -->
 	      <h3 class="navbar-text pull-left"><a class="navbar-brand" href="/">My Blog</a></h3>
+	      <h3 class="navbar-text pull-left"><a class="navbar-brand" href="/index.php?r=users/index">Chat</a></h3>
 	      <ul class="nav navbar-nav ">
+
 	        <?php if ( isset(Yii::app()->session['uid'] ) ) { ?>
+	        	<li><a href="/index.php?r=posts/index">Welcome  <?= Yii::app()->session['username'] ?> </a> </li>
 	        	<li><a href="/index.php?r=posts/create">	<i class="fa fa-edit fa-2x"></i> </a> </li>
 	        	<li ><a href="/index.php?r=posts/index">  <i class="fa fa-user fa-2x"></i></a></li>
 	        	<li ><a href="/index.php?r=site/logout"><i class="fa fa-sign-out fa-2x"></i></a></li>
