@@ -7,11 +7,8 @@
 <script type="text/javascript">
 
 	//socket setup
-	//type: ( 0:chat_request, 1:chat )
 	var TYPING_TIMER_LENGTH = 1000; // 1ms
-
 	var connected = false;
-	//var socketConnected = false;
 	var typing = false;
 	var lastTypingTime;
 
@@ -22,28 +19,23 @@
 	else {
 		var socket = io.connect('http://10.0.0.228:3001');
 		connected = true;
-		//socketConnected = true;
 		
-		//var socket = io.connect('http://localhost:3001');
-		//console.log('test socket false');	
 	}	
 		
-	var userID = "<?php echo Yii::app()->session['uid'] ?>";  //is there any better way to pass php variable to javascirpt???
-	var receID = "<?php echo $receiver['id'] ?>";             //hasn't used
+	var userID = "<?php echo Yii::app()->session['uid'] ?>";  
+	var receID = "<?php echo $receiver['id'] ?>";             
 	var qID    = "<?php echo $question['id'] ?>";
-	// alert(qID);
-
-	// var unixTime = (new Date).getTime();
+	
     //send chat request to server 	
     if ( connected ) 
     	//socket.emit('chat_request', {type:0, sender: userID , receiver: receID, message:"", time: (new Date).getTime() }  );
     	socket.emit('chat_request', socketPayload(0));
-    //------
-    //open its own socket for myself.
+    
+    //open its own socket based on the question id.
     socket.on( qID, function(data) {
     //socket.on(userID, function(data){
     	console.log('received incoming message');
-    	//when received messages, check and display that message
+    	//when received messages, check and then display that message
     	if ( data['type'] != undefined && data['type'] == 1 ){
     		//display the received chat message
     		//$('#message-display').append( "<div class='message'>testing, this is received</div>" );
@@ -59,7 +51,6 @@
 
     		//$("input#inputMessage").attr("placeholder", data['message']);
     		$('div#hidden-typing-notice').text(data['message']);
-
     	}
     	else if (  data['type'] != undefined && data['type'] == 3  && data['sender'] != userID) {
 
@@ -83,8 +74,7 @@
 		});
 
 		$('input#inputMessage').on('input', function (e) {
-			// var uid = "<?php echo Yii::app()->session['uid'] ?>";
-     		//alert('uid: '+uid);	
+			
     		updateTyping();
 
 		});
