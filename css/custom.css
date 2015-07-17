@@ -144,3 +144,9 @@ footer .footer-below{
 	color: red;
 }
 
+#hidden-status-notice {
+	
+	margin: 10px;
+	color: green;
+}
+

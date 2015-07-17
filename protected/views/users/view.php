@@ -29,7 +29,10 @@
     //send chat request to server 	
     if ( connected ) 
     	//socket.emit('chat_request', {type:0, sender: userID , receiver: receID, message:"", time: (new Date).getTime() }  );
-    	socket.emit('chat_request', socketPayload(0));
+    	//socket.emit('chat_request', socketPayload(0));
+    	socket.emit('chat_request', socketPayload(0), function(res){
+    		console.log('dddd');
+    	});
     
     //open its own socket based on the question id.
     socket.on( qID, function(data) {
@@ -57,6 +60,15 @@
     		//$("input#inputMessage").attr("placeholder", "");
     		$('div#hidden-typing-notice').text("");
 
+    	}
+    	else if ( data['type'] != undefined && data['type'] == 4 && data['sender'] != userID ) {
+    		$('div#hidden-status-notice').text( data['message'] );	
+    		$('div#hidden-status-notice').css('color', "green");
+    	
+    	}
+    	else if ( data['type'] != undefined && data['type'] == 5 && data['sender'] != userID ) {
+    		$('div#hidden-status-notice').text( data['message'] );	
+    		$('div#hidden-status-notice').css('color', "red");
     	}
 
     })
@@ -122,6 +134,8 @@
     //1 - regular chat message;
     //2 - typing message;
     //3 - stop typing;
+    //4 -  user online; 
+    //5 -  user away;
     //still constructing...
     function socketPayload(typeNum, formData, unixTime){
     	if ( typeNum == 0 ) {
@@ -131,16 +145,23 @@
     		return { type: formData[0]['value'], question: qID, sender: formData[1]['value'], receiver: formData[2]['value'], message: formData[3]['value'], time: unixTime };
     	}
     	else if ( typeNum == 2 ) {
-    		return {type: 2, question: qID, sender:userID, receiver:receID, message: userID+" is typing...", time: ""}; 
+    		return {type: 2, question: qID, sender:userID, receiver: receID, message: userID+" is typing...", time: ""}; 
     	}
     	else if ( typeNum == 3) {
-    		return {type: 3, question: qID,  sender:userID, receiver:receID, message: "stop typing", time: "" }; 
+    		return {type: 3, question: qID,  sender:userID, receiver: receID, message: "stop typing", time: "" }; 
+    	}
+    	else if ( typeNum == 4 ){
+    		return { type: 4, question: qID, sender: userID, receiver: receID, message: userID+" online", time: ""};
+    	}
+    	else if ( typeNum == 5 ) {
+    		return { type: 5, question: qID, sender: userID, receiver: receID, message: userID+" away ", time: ""};
     	}
     }
 
     //***************************************************************************
     //active and inactive feature to save resouces on our node server, so it can be more scale
-	var IDLE_TIMEOUT = 300; //seconds
+	var IDLE_TIMEOUT = 10; //seconds
+	var userStatus   = 1;  // 1 online, 2 away
 	var _idleSecondsCounter = 0;
 	document.onclick = function() {
 	    _idleSecondsCounter = 0;
@@ -151,7 +172,7 @@
 	document.onkeypress = function() {
 	    _idleSecondsCounter = 0;
 	};
-	window.setInterval(CheckIdleTime, 1000);
+	window.setInterval(CheckIdleTime, 1000);  //will set this longer timer
 
 	function CheckIdleTime() {
 	    _idleSecondsCounter++;
@@ -161,36 +182,34 @@
 
 	    var oPanel = document.getElementById("SecondsUntilExpire");
 	    if (oPanel){
-	    	oPanel.innerHTML = (IDLE_TIMEOUT - _idleSecondsCounter) + "";
+	    	oPanel.innerHTML = "active timer:"+(IDLE_TIMEOUT - _idleSecondsCounter);
 	    }
 	        
 	    if (_idleSecondsCounter >= IDLE_TIMEOUT) {
-	        // alert("Time expired!");
-	        // document.location.href = "logout.html";
-	        //socket = "";
-
-	        if ( connected ){
-	        	// socket.disconnect();
-	            // console.log(socket);
-
-	         socket.io.disconnect();
-	            connected = false;
+	        if ( userStatus == 1 ){
+	        		socket.emit( qID, socketPayload(5) );
+	        		userStatus = 2;
 	        }
+	    	
+	        // if ( connected ){	 
+	        //  	socket.io.disconnect();
+	        //     connected = false;
+	        // }
 	        
 	    }
 	    else{
-	    	
-	    	if ( !connected ) {
-	    		console.log(socket.io);
-	    		socket.io.reconnect();
-	    		connected = true;
-	    		if ( connected ) 
-	    			socket.emit ( 'chat_request', socketPayload(0));
-	    			//socket.emit('chat_request', {type:0, sender: userID , receiver: receID, message:"", time: (new Date).getTime() }  );
-
-	    		//socket.socket.reconnect();
-	    		
-	    	}
+	    	//online
+	    	 if( userStatus != 1 ) {
+	    	 	socket.emit( qID, socketPayload(4) );
+	    	 	userStatus = 1;
+	    	 }	
+	    	// if ( !connected ) {	    		
+	    	// 	console.log(socket.io);
+	    	// 	socket.io.reconnect();
+	    	// 	connected = true;
+	    	// 	if ( connected ) 
+	    	// 		socket.emit ( 'chat_request', socketPayload(0));  		
+	    	// }
 	    	
 	    }
 	}
@@ -270,7 +289,7 @@
 
 
 
-
+			<div id="hidden-status-notice"></div>
 			<div id="hidden-typing-notice"></div>
 		
 		</div>
