@@ -150,3 +150,7 @@ footer .footer-below{
 	color: green;
 }
 
+#hidden-connection-error{
+	color:red;
+	text-decoration: bold;
+}

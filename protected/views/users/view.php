@@ -17,7 +17,7 @@
 		//socket.emit("chat_request", "test" );
 	}
 	else {
-		var socket = io.connect('http://10.0.0.228:3001');
+		var socket = io.connect('http://10.0.0.228:3001', {reconnection:false});
 		connected = true;
 		
 	}	
@@ -27,12 +27,19 @@
 	var qID    = "<?php echo $question['id'] ?>";
 	
     //send chat request to server 	
-    if ( connected ) 
+    if ( connected ) {
     	//socket.emit('chat_request', {type:0, sender: userID , receiver: receID, message:"", time: (new Date).getTime() }  );
     	//socket.emit('chat_request', socketPayload(0));
     	socket.emit('chat_request', socketPayload(0), function(res){
-    		console.log('dddd');
+    		console.log('res');
     	});
+
+    	socket.emit( qID, socketPayload(4) );
+	    //userStatus = 1;
+	 }  
+
+
+
     
     //open its own socket based on the question id.
     socket.on( qID, function(data) {
@@ -71,7 +78,28 @@
     		$('div#hidden-status-notice').css('color', "red");
     	}
 
-    })
+    });
+
+
+	socket.on( 'disconnect', function(data){
+		$('h1#hidden-connection-error').text( "Lost the connection between you and our server!" );	
+		// setInterval(socket.io.reconnect, 5000);
+		setTimeout(function () {
+			console.log('reconnect');
+			socket.io.reconnect();
+		}, 6000);
+		
+
+	});
+
+
+	socket.on('connect', function(data){
+		$('h1#hidden-connection-error').text( "" );
+		console.log('.....reonnected!!!!');
+
+	}); 
+
+
 
 	//alert("hi");
 	$(document).ready(function() {
@@ -79,6 +107,13 @@
 		$('#chat-form').on('submit', function (e) {
 			var formData = $(this).serializeArray();    	
     		sendMessage(formData);
+
+    		//****to test something****
+    		// socket.emit('something', 'tobi', function (data) {
+		    //   console.log(data); // data will be 'woot'
+		    // });
+		  
+    		//****
 
     		$('#inputMessage').val("");
     		//e.stopPropagation();
@@ -264,6 +299,7 @@
 
 
 <div class="container">
+	<h1 id="hidden-connection-error"></h1>
 	<h1>Question Page #</h1>
 	<div class="row-fluid">
 		<div class=" col-md-8 col-xs-8" >
