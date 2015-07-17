@@ -8,10 +8,10 @@
 
 	//socket setup
 	//type: ( 0:chat_request, 1:chat )
-	var TYPING_TIMER_LENGTH = 500; // ms
+	var TYPING_TIMER_LENGTH = 1000; // 1ms
 
 	var connected = false;
-	var socketConnected = false;
+	//var socketConnected = false;
 	var typing = false;
 	var lastTypingTime;
 
@@ -22,21 +22,26 @@
 	else {
 		var socket = io.connect('http://10.0.0.228:3001');
 		connected = true;
-		socketConnected = true;
-		//var socket = io.connect('http://localhost:3001');
-		//console.log('test socket false');
+		//socketConnected = true;
 		
+		//var socket = io.connect('http://localhost:3001');
+		//console.log('test socket false');	
 	}	
 		
 	var userID = "<?php echo Yii::app()->session['uid'] ?>";  //is there any better way to pass php variable to javascirpt???
 	var receID = "<?php echo $receiver['id'] ?>";             //hasn't used
+	var qID    = "<?php echo $question['id'] ?>";
+	// alert(qID);
+
 	// var unixTime = (new Date).getTime();
     //send chat request to server 	
-    if ( socketConnected ) socket.emit('chat_request', {type:0, sender: userID , receiver: receID, message:"", time: (new Date).getTime() }  );
-
+    if ( connected ) 
+    	//socket.emit('chat_request', {type:0, sender: userID , receiver: receID, message:"", time: (new Date).getTime() }  );
+    	socket.emit('chat_request', socketPayload(0));
     //------
     //open its own socket for myself.
-    socket.on(userID, function(data){
+    socket.on( qID, function(data) {
+    //socket.on(userID, function(data){
     	console.log('received incoming message');
     	//when received messages, check and display that message
     	if ( data['type'] != undefined && data['type'] == 1 ){
@@ -50,13 +55,13 @@
 	    	$('#message-display').append($tmp);
 
     	}
-    	else if (  data['type'] != undefined && data['type'] == 2 ) {
+    	else if (  data['type'] != undefined && data['type'] == 2 && data['sender'] != userID ) {
 
     		//$("input#inputMessage").attr("placeholder", data['message']);
     		$('div#hidden-typing-notice').text(data['message']);
 
     	}
-    	else if (  data['type'] != undefined && data['type'] == 3 ) {
+    	else if (  data['type'] != undefined && data['type'] == 3  && data['sender'] != userID) {
 
     		//$("input#inputMessage").attr("placeholder", "");
     		$('div#hidden-typing-notice').text("");
@@ -64,7 +69,6 @@
     	}
 
     })
-
 
 	//alert("hi");
 	$(document).ready(function() {
@@ -78,7 +82,6 @@
     		return false;
 		});
 
-
 		$('input#inputMessage').on('input', function (e) {
 			// var uid = "<?php echo Yii::app()->session['uid'] ?>";
      		//alert('uid: '+uid);	
@@ -91,7 +94,6 @@
     		updateTyping();
 		});
 
-
 	});
 
 	
@@ -103,10 +105,7 @@
     	}
 
     	var unixTime = (new Date).getTime() ;
-    	var dataToSend = { type: formData[0]['value'], sender: formData[1]['value'], receiver: formData[2]['value'], message: formData[3]['value'], time: unixTime };
-    	// console.log(dataToSend);
-
-    	//clone hidden field
+    	//var dataToSend = { type: formData[0]['value'], sender: formData[1]['value'], receiver: formData[2]['value'], message: formData[3]['value'], time: unixTime };
     	
     	$( '.hidden-message .sender'  ).text( formData[1]['value'] );
     	$( '.hidden-message  .content'  ).text( formData[3]['value'] );
@@ -117,18 +116,41 @@
 
     	//send via socket
     	//socket.emit('chat_message', dataToSend);
-    	if ( socketConnected ) socket.emit(formData[1]['value'], dataToSend);
+    	if ( connected ) 
+    		socket.emit(qID, socketPayload(1, formData, unixTime) );
+    		//socket.emit(formData[1]['value'], dataToSend);
     	//to stop typing
-    	if ( socketConnected ) socket.emit(userID, {type: 3, sender:userID, receiver:receID, message: "stop typing", time: ""} );
+    	if ( connected ) 
+    		socket.emit(qID, socketPayload(3) );
+    		//socket.emit(userID, {type: 3, sender:userID, receiver:receID, message: "stop typing", time: ""} );
     	typing = false;
     	//
     }
 
+    //************************************
+    //0 - request message; 
+    //1 - regular chat message;
+    //2 - typing message;
+    //3 - stop typing;
+    //still constructing...
+    function socketPayload(typeNum, formData, unixTime){
+    	if ( typeNum == 0 ) {
+    		return {type:0, question: qID, sender: userID , receiver: receID, message:"", time: (new Date).getTime() } ;
+    	}
+    	else if ( typeNum == 1 ){
+    		return { type: formData[0]['value'], question: qID, sender: formData[1]['value'], receiver: formData[2]['value'], message: formData[3]['value'], time: unixTime };
+    	}
+    	else if ( typeNum == 2 ) {
+    		return {type: 2, question: qID, sender:userID, receiver:receID, message: userID+" is typing...", time: ""}; 
+    	}
+    	else if ( typeNum == 3) {
+    		return {type: 3, question: qID,  sender:userID, receiver:receID, message: "stop typing", time: "" }; 
+    	}
+    }
 
-
-    
+    //***************************************************************************
     //active and inactive feature to save resouces on our node server, so it can be more scale
-	var IDLE_TIMEOUT = 30; //seconds
+	var IDLE_TIMEOUT = 300; //seconds
 	var _idleSecondsCounter = 0;
 	document.onclick = function() {
 	    _idleSecondsCounter = 0;
@@ -157,26 +179,27 @@
 	        // document.location.href = "logout.html";
 	        //socket = "";
 
-	        if ( socketConnected ){
+	        if ( connected ){
 	        	// socket.disconnect();
-	         //    console.log(socket);
+	            // console.log(socket);
 
 	         socket.io.disconnect();
-	            socketConnected = false;
+	            connected = false;
 	        }
 	        
 	    }
 	    else{
 	    	
-	    	if ( !socketConnected ) {
+	    	if ( !connected ) {
 	    		console.log(socket.io);
 	    		socket.io.reconnect();
-	    		socketConnected = true;
-	    		if ( socketConnected ) socket.emit('chat_request', {type:0, sender: userID , receiver: receID, message:"", time: (new Date).getTime() }  );
+	    		connected = true;
+	    		if ( connected ) 
+	    			socket.emit ( 'chat_request', socketPayload(0));
+	    			//socket.emit('chat_request', {type:0, sender: userID , receiver: receID, message:"", time: (new Date).getTime() }  );
 
 	    		//socket.socket.reconnect();
 	    		
-
 	    	}
 	    	
 	    }
@@ -184,7 +207,7 @@
 
 
 
-
+	//*************************************************************
     //-----------------------------
     // Keyboard events
     // $(document).keydown(function(e) {
@@ -196,22 +219,7 @@
     //     }
     // })
 
-    //    $window.keydown(function (event) {
-    //    // Auto-focus the current input when a key is typed
-	//     if (!(event.ctrlKey || event.metaKey || event.altKey)) {
-	//     	$currentInput.focus();
-	//     }
-	//     // When the client hits ENTER on their keyboard
-	//     if (event.which === 13) {
-	//     	if (username) {
-	//     		sendMessage();
-	//     		socket.emit('stop typing');
-	//     		typing = false;
-	//     	} else {
-	//     		setUsername();
-	//     	}
-	//     }
-	// });
+    
 
 
     // Updates the typing event
@@ -220,7 +228,9 @@
 	 		if (!typing) {
 	 			typing = true;
 	 			//socket.emit('typing');	 			
-	 			if ( socketConnected ) socket.emit(userID, {type: 2, sender:userID, receiver:receID, message: userID+" is typing...", time: ""} );
+	 			if ( connected ) 
+	 				socket.emit( qID, socketPayload(2) );
+	 				//socket.emit(userID, {type: 2, sender:userID, receiver:receID, message: userID+" is typing...", time: ""} );
 	 		}
 	 		lastTypingTime = (new Date()).getTime();
 
@@ -229,7 +239,9 @@
 	 			var timeDiff = typingTimer - lastTypingTime;
 	 			if (timeDiff >= TYPING_TIMER_LENGTH && typing) {
 	 				//socket.emit('stop typing');
-	 				if ( socketConnected ) socket.emit(userID, {type: 3, sender:userID, receiver:receID, message: "stop typing", time: ""} );
+	 				if ( connected ) 
+	 					socket.emit( qID, socketPayload(3) );
+	 					//socket.emit(userID, {type: 3, sender:userID, receiver:receID, message: "stop typing", time: ""} );
 	 				typing = false;
 	 			}
 	 		}, TYPING_TIMER_LENGTH);
@@ -274,7 +286,7 @@
 		</div>
 
 
-		
+
 	</div>
 
 

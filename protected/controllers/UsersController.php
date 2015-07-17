@@ -70,8 +70,9 @@ class UsersController extends Controller
 		$receiver = Users::model()->findbyPk($_GET['id']);
 		// var_dump($receiver);
 		// die;
+		$question = ['id'=>$_GET['qid']];
 		$this->render('view', array(
-		 	'receiver'=> $receiver
+		 	'receiver'=> $receiver, 'question'=> $question,
 		));
 	}
 

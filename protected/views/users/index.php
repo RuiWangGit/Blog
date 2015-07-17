@@ -13,18 +13,23 @@ $this->menu=array(
 
 <?php 
 	
+	$qid = 0;
+	
 
 	foreach($dataProvider->getData() as $userData){
 		
 		//users can not talk to themself
 		//session always stores user id
 		if ( $userData['id'] != Yii::app()->session['uid'] ){
-
+			if ( $userData['id'] == 8) $qid = 1;
+			if ( $userData['id'] == 9) $qid = 2;
+			if ( $userData['id'] == 10) $qid = 3;
+			if ( $userData['id'] == 36) $qid = 4;
 
 		?>
 
 			<div class="private-question" >
-				<p>Question: <a href ="/index.php?r=users/view&id=<?= $userData['id'] ?>"><?= $userData['username'] ?></a></p>
+				<p> <a href ="/index.php?r=users/view&qid=<?=$qid?>&id=<?= $userData['id'] ?>"> Question: <?= $qid ?>,   </a></p>
 			</div>
 
 <?php
